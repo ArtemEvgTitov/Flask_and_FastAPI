@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} {{ title }} {% endblock %} {% block content %}
+<div class="products">
+    {% for item in all_clothes %}
+    <div class="card p-2 bd-highligh">
+        {% if item.product == 'Куртка' %}
+        <img src="../static/images/куртка.jpg" class="card-img-top" alt="..."> {% endif %} {% if item.product == 'Джинсы' %}
+        <img src="../static/images/джинсы.jpg" class="card-img-top" alt="..."> {% endif %} {% if item.product == 'Свитер' %}
+        <img src="../static/images/свитер.jpg" class="card-img-top" alt="..."> {% endif %} {% if item.product == 'Кроссовки' %}
+        <img src="../static/images/кроссовки.jpg" class="card-img-top" alt="..."> {% endif %} {% if item.product == 'Ботинки' %}
+        <img src="../static/images/ботинки.jpg" class="card-img-top" alt="..."> {% endif %} {% if item.product == 'Перчатки' %}
+        <img src="../static/images/перчатки.jpg" class="card-img-top" alt="..."> {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ item.product }}</h5>
+            <p class="card-subtitle">Size: {{ item.size }}</p>
+            <p class="card-text">{{ item.info }}</p>
+            <a href="#" class="btn btn-primary">{{ item.price }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
