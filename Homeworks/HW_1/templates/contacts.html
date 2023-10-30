@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block title %} {{ title }} {% endblock %} {% block content %}
+{% extends 'base.html' %} {% block title %} {{ title }} {% endblock %} {% block links %}
+<a class="nav-link" href="./base.html">Home</a>
+<a class="nav-link" href="./products.html">Одежда</a>
+<a class="nav-link active" aria-current="page" href="./contacts.html">Контакты</a> {% endblock %} {% block content %}
 <div class="contacts">
     <p>Телефон: 8-800-555-35-35</p>
     <p>email: super-magazin.ru</p>

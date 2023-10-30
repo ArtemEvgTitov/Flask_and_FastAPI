@@ -18,9 +18,10 @@
           </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="./products.html">Одежда</a>
-                    <a class="nav-link" href="./contacts.html">Контакты</a>
+                    {% block links %}
+                    <a class="nav-link active" aria-current="page" href="./base.html">Home</a>
+                    <a class="nav-link" href="./products.html">Товары</a>
+                    <a class="nav-link" href="./contacts.html">Контакты</a> {% endblock %}
                 </div>
             </div>
         </div>
