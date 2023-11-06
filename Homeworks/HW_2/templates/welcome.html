@@ -1,0 +1,7 @@
+{% extends 'index.html' %} {% block content %}
+<p class="fs-4">Добро пожаловать, {{ name }}!</p>
+<p class="fs-5">Ваш email: {{ email }}!</p>
+<form action="/logout" method="get">
+    <input class="btn btn-primary" type="submit" value="Выйти">
+</form>
+{% endblock %}
