@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ №3</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Домашняя работа №3</a>
+            <a class="navbar-brand" href="{{ url_for('users') }}">Все пользователи</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+    </nav>
+    <div class="content">
+        {% block content %}
+        <h1>Регистрация</h1>
+        <form class="form" method="post">
+            {{ form.csrf_token }}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm_password">Confirm_password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+
+        {% if form.errors %}
+        <div style="color: red;">
+            {% for field, errors in form.errors.items() %}
+            <p>{{ field }}: {{ ', '.join(errors) }}</p>
+            {% endfor %}
+        </div>
+        {% endif %} {% endblock %}
+    </div>
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3 bg-body-tertiary">
+            <a class="navbar-brand link-primary" href="https://t.me/ArtemTitov">Мой Telegramm</a>
+        </div>
+    </footer>
+</body>
+
+</html>

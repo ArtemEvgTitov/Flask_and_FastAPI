@@ -1,0 +1,7 @@
+{% extends 'index.html' %} {% block content %}
+<ul>
+    {% for user in users %}
+    <li>{{ user.name }} {{ user.surname }} - {{ user.email }}</li>
+    {% endfor %}
+</ul>
+<a class="link-offset-2" href="{{ url_for('index') }}">Вернуться к форме регистрации</a> {% endblock %}
