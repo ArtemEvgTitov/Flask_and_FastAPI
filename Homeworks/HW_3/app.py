@@ -34,7 +34,7 @@ def index():
 @app.route('/users')
 def users():
     all_users = User.query.all()
-    return render_template('users.html', users=all_users)
+    return render_template('user_list.html', users=all_users)
 
 
 if __name__ == '__main__':
